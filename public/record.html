@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Record Path</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1975d2",
+                        "accent-red": "#ef4444",
+                        "accent-orange": "#f97316",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#0f172a",
+                        "card-dark": "#1e293b",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        body { min-height: 100vh; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display text-white antialiased selection:bg-accent-red selection:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-24">
+<header class="sticky top-0 z-20 flex items-center justify-between bg-background-dark/95 px-4 py-4 backdrop-blur-sm transition-colors border-b border-white/5">
+<button class="group flex h-10 w-10 shrink-0 cursor-not-allowed items-center justify-center rounded-full opacity-30 transition-colors" disabled="">
+<span class="material-symbols-outlined text-[24px] text-white">arrow_back_ios_new</span>
+</button>
+<h1 class="flex-1 text-center text-lg font-bold leading-tight tracking-tight text-white">Recording Path</h1>
+<div class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-red-500/10 px-3 ring-1 ring-inset ring-red-500/30">
+<div class="h-2.5 w-2.5 animate-pulse rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.8)]"></div>
+<span class="text-[11px] font-bold tracking-wider text-red-500">REC</span>
+</div>
+</header>
+<main class="flex-1 px-4 pt-4 flex flex-col gap-5">
+<div class="relative overflow-hidden rounded-xl bg-card-dark p-5 shadow-lg shadow-black/40 ring-1 ring-white/10">
+<div class="absolute -right-6 -top-6 h-32 w-32 rounded-full bg-accent-red/10 blur-3xl"></div>
+<div class="relative z-10 grid grid-cols-[24px_1fr] gap-x-4">
+<div class="flex flex-col items-center">
+<div class="mt-1.5 h-3 w-3 rounded-full border-2 border-slate-600 bg-card-dark"></div>
+<div class="my-0.5 w-0.5 flex-1 bg-gradient-to-b from-slate-600 to-accent-red"></div>
+</div>
+<div class="pb-5">
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Start Point</span>
+<div class="mt-0.5 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-slate-500">flag</span>
+<span class="text-sm font-semibold text-slate-300">Main Entrance Hall</span>
+</div>
+</div>
+<div class="flex flex-col items-center">
+<div class="relative z-10 h-3 w-3 rounded-full bg-accent-red shadow-[0_0_8px_rgba(239,68,68,0.6)] ring-2 ring-card-dark">
+<div class="absolute -inset-1 animate-pulse rounded-full bg-accent-red/40"></div>
+</div>
+<div class="my-0.5 flex-1 w-[2px] bg-[linear-gradient(to_bottom,transparent_50%,#334155_50%)] bg-[length:2px_8px] opacity-70"></div>
+</div>
+<div class="-mt-1 pb-5">
+<div class="mb-0.5 flex items-center justify-between">
+<span class="text-xs font-bold text-accent-red">Last Scanned</span>
+<span class="animate-pulse rounded bg-accent-red/10 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-accent-red">Recording</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-accent-red">my_location</span>
+<span class="text-base font-bold leading-tight text-white">East Wing Corridor (QR-04)</span>
+</div>
+</div>
+<div class="flex flex-col items-center">
+<div class="h-3 w-3 rounded-full border-2 border-slate-500 bg-slate-800/50"></div>
+</div>
+<div class="pt-0">
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Target End Point</span>
+<div class="mt-0.5 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-slate-400">sports_score</span>
+<span class="text-sm font-semibold text-slate-300">Faculty Office 302</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 divide-x divide-white/10 rounded-xl bg-card-dark p-4 shadow-sm ring-1 ring-white/5">
+<div class="flex flex-col items-center gap-1 px-1">
+<span class="material-symbols-outlined text-xl text-slate-400">timer</span>
+<span class="text-2xl font-bold tabular-nums tracking-tight text-white">04:23</span>
+<span class="text-[10px] font-medium uppercase text-slate-500">Duration</span>
+</div>
+<div class="flex flex-col items-center gap-1 px-1">
+<span class="material-symbols-outlined text-xl text-slate-400">straighten</span>
+<div class="flex items-baseline gap-0.5">
+<span class="text-2xl font-bold tabular-nums tracking-tight text-white">145</span>
+<span class="text-xs font-medium text-slate-500">m</span>
+</div>
+<span class="text-[10px] font-medium uppercase text-slate-500">Walked</span>
+</div>
+<div class="flex flex-col items-center gap-1 px-1">
+<span class="material-symbols-outlined text-xl text-slate-400">directions_walk</span>
+<span class="text-2xl font-bold tabular-nums tracking-tight text-white">312</span>
+<span class="text-[10px] font-medium uppercase text-slate-500">Steps</span>
+</div>
+</div>
+<div class="flex items-center gap-4 rounded-xl bg-white/5 p-4 ring-1 ring-white/5">
+<div class="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-black/40">
+<img alt="Abstract scan pattern" class="h-full w-full object-cover opacity-60 mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSJYGhMnpBgmFxn95UTsldLmib75FUVYTsA7lK87thyFegCj4oArBAq9EGh0rh3urg2RgEty9994TXPFM4zHLRbUPA1ERX1L8dXvl091exTVgQS94NlYZlfHFA1cetTXUBNfe0B2L9EdAM_ZcLSKEytSajZUcexhPjWYZKi3AdjH5AEEJ-0BSOYxyvjryp9wYJMadjS3U-PScF-1jyUSRZRpFVl6PCs7lY-09di30LsQ81YJEEsfw8Uw8RAaqjRcxlnr0fSWj87XjX"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl text-slate-200">qr_code_2</span>
+</div>
+</div>
+<p class="text-sm font-medium leading-relaxed text-slate-200">Walk to the next location point and scan the QR code to link nodes.</p>
+</div>
+<div class="flex justify-center py-2">
+<button id="scanNextBtn" class="group relative flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-accent-orange to-accent-red shadow-xl shadow-accent-red/20 transition-all hover:scale-105 active:scale-95">
+<div class="absolute inset-0 rounded-full bg-white opacity-0 transition-opacity group-hover:opacity-10"></div>
+<div class="absolute -inset-1 animate-pulse-slow rounded-full border border-accent-red/50 opacity-50"></div>
+<span class="material-symbols-outlined text-4xl text-white drop-shadow-md">qr_code_scanner</span>
+<div class="absolute -bottom-2 whitespace-nowrap rounded-full bg-background-dark/80 px-2 py-0.5 text-[10px] font-bold text-white backdrop-blur ring-1 ring-white/10">SCAN NEXT</div>
+</button>
+</div>
+<div class="mt-2 grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 rounded-xl border border-slate-600 bg-transparent py-4 text-sm font-bold text-slate-300 transition-colors hover:bg-white/5 active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">pause</span>
+                Pause Rec
+            </button>
+<button class="flex items-center justify-center gap-2 rounded-xl bg-accent-red py-4 text-sm font-bold text-white shadow-lg shadow-accent-red/20 transition-all hover:bg-red-500 active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">stop_circle</span>
+                Stop &amp; Save
+            </button>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 right-0 z-20 border-t border-white/5 bg-background-dark/95 px-6 py-4 backdrop-blur-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] font-medium uppercase tracking-wider text-slate-500">Session Progress</span>
+<span class="text-sm font-bold text-white">4 Nodes Recorded</span>
+</div>
+<div class="flex items-center gap-1 opacity-80">
+<div class="h-1.5 w-1.5 rounded-full bg-slate-600"></div>
+<div class="h-0.5 w-2 bg-slate-700"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-slate-600"></div>
+<div class="h-0.5 w-2 bg-slate-700"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-slate-500"></div>
+<div class="h-0.5 w-3 bg-gradient-to-r from-slate-600 to-accent-red"></div>
+<div class="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-accent-red/20">
+<div class="h-1.5 w-1.5 rounded-full bg-accent-red animate-pulse"></div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script>
+  /* ===== Load Start & End Points ===== */
+  const start = localStorage.getItem("startPoint");
+  const end = localStorage.getItem("endPoint");
+
+  const labels = document.querySelectorAll(".text-slate-300");
+
+  if (labels.length >= 2) {
+    labels[0].innerText = start || "Start Point";
+    labels[1].innerText = end || "End Point";
+  }
+
+  /* ===== SCAN NEXT BUTTON ===== */
+  const scanBtn = document.getElementById("scanNextBtn");
+
+  if (scanBtn) {
+    scanBtn.addEventListener("click", async () => {
+
+      const sessionId = localStorage.getItem("sessionId");
+
+      if (!sessionId) {
+        alert("Session not found. Please start again.");
+        return;
+      }
+
+      // Temporary QR code (for testing)
+      const qrCode = "QR-" + Math.floor(Math.random() * 100);
+
+      try {
+        await fetch("/add-node", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            sessionId: sessionId,
+            qrCode: qrCode
+          })
+        });
+
+        alert("QR Recorded: " + qrCode);
+
+      } catch (err) {
+        alert("Server error. Is backend running?");
+      }
+    });
+  }
+</script>
+</body>
+</html>

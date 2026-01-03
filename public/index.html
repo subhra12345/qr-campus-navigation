@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Set Path Points - QR Nav</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                        "surface-dark": "#2f1616",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased h-screen flex flex-col overflow-hidden text-slate-900 dark:text-white">
+<!-- Top App Bar -->
+<div class="flex items-center justify-between p-4 pt-6 pb-2 bg-background-light dark:bg-background-dark sticky top-0 z-10">
+<button class="flex size-10 items-center justify-center rounded-full active:bg-black/10 dark:active:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white" style="font-size: 24px;">arrow_back_ios_new</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight">Set Path Points</h2>
+<div class="size-10"></div> <!-- Spacer for alignment -->
+</div>
+<!-- Main Scrollable Content -->
+<div class="flex-1 overflow-y-auto no-scrollbar px-5 pb-32">
+<!-- Header Section -->
+<div class="mt-4 mb-8">
+<h1 class="text-2xl font-bold leading-tight tracking-tight mb-2">Define Route Segments</h1>
+<p class="text-slate-500 dark:text-gray-400 text-base font-normal leading-relaxed">
+                Enter the names for the starting location and destination to begin mapping the path.
+            </p>
+</div>
+<!-- Path Input Form -->
+<div class="relative flex flex-col gap-6">
+<!-- Visual Connector Line -->
+<div class="absolute left-[19px] top-[40px] bottom-[40px] w-[2px] bg-gradient-to-b from-primary/50 to-primary/20 pointer-events-none"></div>
+<!-- Start Point Field -->
+<div class="group relative flex gap-4">
+<!-- Icon Marker -->
+<div class="flex flex-col items-center pt-3">
+<div class="size-10 rounded-full bg-surface-dark border border-primary/30 flex items-center justify-center z-10 shadow-lg shadow-primary/5">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">my_location</span>
+</div>
+</div>
+<!-- Input -->
+<div class="flex-1">
+<label class="block text-sm font-medium text-slate-400 dark:text-gray-400 mb-1.5 ml-1">Start Point Name</label>
+<div class="relative">
+<input  id="startPoint" class="w-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-white/5 rounded-xl px-4 py-3.5 text-base text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm" placeholder="e.g., Main Entrance Lobby" type="text"/>
+</div>
+</div>
+</div>
+<!-- End Point Field -->
+<div class="group relative flex gap-4">
+<!-- Icon Marker -->
+<div class="flex flex-col items-center pt-3">
+<div class="size-10 rounded-full bg-primary flex items-center justify-center z-10 shadow-lg shadow-primary/20 ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-white" style="font-size: 20px;">pin_drop</span>
+</div>
+</div>
+<!-- Input -->
+<div class="flex-1">
+<label class="block text-sm font-medium text-slate-400 dark:text-gray-400 mb-1.5 ml-1">End Point Name</label>
+<div class="relative">
+<input id="endPoint" class="w-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-white/5 rounded-xl px-4 py-3.5 text-base text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm" placeholder="e.g., Room 304 - Chemistry Lab" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Info Card / Helper -->
+<div class="mt-8 p-4 rounded-xl bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-500/10 flex gap-3 items-start">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" style="font-size: 20px;">info</span>
+<div class="text-sm text-blue-800 dark:text-blue-200 leading-relaxed">
+<span class="font-semibold block mb-0.5">Tip for Mappers</span>
+                Ensure point names match the existing QR codes exactly if you are linking to pre-printed signage.
+            </div>
+</div>
+</div>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark dark:to-transparent z-20 pb-8">
+<button id="startRecordingBtn" class="w-full bg-primary hover:bg-red-600 active:scale-[0.98] transition-all h-14 rounded-xl flex items-center justify-center gap-2 shadow-xl shadow-primary/25 group">
+<div class="relative flex items-center justify-center">
+<span class="absolute inline-flex h-full w-full rounded-full bg-white opacity-25 animate-ping group-hover:animate-none"></span>
+<span class="material-symbols-outlined text-white relative" style="font-size: 24px;">fiber_manual_record</span>
+</div>
+<span class="text-white text-base font-bold tracking-wide">Start Recording</span>
+</button>
+</div>
+<script>
+document.getElementById("startRecordingBtn").addEventListener("click", async () => {
+
+  // 1. Read input values
+  const startPoint = document.getElementById("startPoint").value;
+  const endPoint = document.getElementById("endPoint").value;
+
+  // 2. Check empty
+  if (!startPoint || !endPoint) {
+    alert("Please enter both Start and End points");
+    return;
+  }
+
+  // 3. Send data to backend
+  const response = await fetch("/start-session", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      startPoint: startPoint,
+      endPoint: endPoint
+    })
+  });
+
+  // 4. Receive session ID
+  const data = await response.json();
+
+  // 5. Store data in browser memory
+  localStorage.setItem("sessionId", data.sessionId);
+  localStorage.setItem("startPoint", startPoint);
+  localStorage.setItem("endPoint", endPoint);
+
+  // 6. Go to next screen
+  window.location.href = "record.html";
+});
+</script>
+
+
+</body>
+</html>
